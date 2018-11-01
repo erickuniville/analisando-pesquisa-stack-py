@@ -3,9 +3,6 @@ import pandas as pd
 # dataframe = pd.read_csv("teste.csv")
 dataframe = pd.read_csv("survey_languages_splited.csv")
 
-linguagens = pd.unique(dataframe.linguagem.values)
-d_data = {linguagem: dataframe['satisfacao'][dataframe.linguagem == linguagem] for linguagem in linguagens}
-
 num_linguagens = len(pd.unique(dataframe.linguagem))
 total_amostra = len(dataframe.values)
 amostra_por_linguagem = dataframe.groupby('linguagem').size()
