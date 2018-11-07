@@ -2,14 +2,13 @@ import pandas as pd
 from scipy import stats
 
 # dataframe = pd.read_csv("teste.csv")
-dataframe = pd.read_csv("survey_languages_splited.csv")
+dataframe = pd.read_csv("job_priorities.csv")
 
-linguagens = pd.unique(dataframe.linguagem.values)
-d_data = {linguagem: dataframe['satisfacao'][dataframe.linguagem == linguagem] for linguagem in linguagens}
+priotities = pd.unique(dataframe.priority.values)
+d_data = {priority: dataframe['satisfaction'][dataframe.priority == priority] for priority in priotities}
 
-p_value = stats.f_oneway(d_data['C#'], d_data['Java'], d_data['JavaScript'], d_data['Kotlin'],
-                         d_data['PHP'], d_data['Python'], d_data['Ruby']).pvalue
+p_value = stats.f_oneway(d_data['diversity'], d_data['culture'], d_data['tecnologies'], d_data['industry'],
+                         d_data['departament'], d_data['financialPerf'], d_data['impactful'], d_data['profDevelopment'],
+                         d_data['workFremotely'], d_data['compensations']).pvalue
 
 print("(Anova)   P-value:", p_value)
-print("(Kruskal) P-value:", stats.kruskal(d_data['C#'], d_data['Java'], d_data['JavaScript'], d_data['Kotlin'],
-                                          d_data['PHP'], d_data['Python'], d_data['Ruby']).pvalue)
