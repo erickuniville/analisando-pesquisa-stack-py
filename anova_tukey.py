@@ -12,3 +12,7 @@ p_value = stats.f_oneway(d_data['diversity'], d_data['culture'], d_data['tecnolo
                          d_data['workFremotely'], d_data['compensations']).pvalue
 
 print("(Anova)   P-value:", p_value)
+
+# ====================================================
+# RESULTADO: (Anova)   P-value: 4.532945350703848e-28
+# ====================================================
