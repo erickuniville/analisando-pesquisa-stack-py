@@ -1,12 +1,11 @@
 import pandas as pd
 
-# dataframe = pd.read_csv("teste.csv")
-dataframe = pd.read_csv("job_priorities.csv")
+df = pd.read_csv("job_priorities_br.csv")
 
-num_opcoes = len(pd.unique(dataframe.priority))
-total_amostra = len(dataframe.values)
-amostra_por_prioridade = dataframe.groupby('priority').size()
-media_por_prioridade = dataframe.groupby('priority').mean()
+num_opcoes = len(pd.unique(df.priority))
+total_amostra = len(df.values)
+amostra_por_prioridade = df.groupby('priority').size()
+media_por_prioridade = df.groupby('priority').mean()
 
 print("Número de opções de prioridade: ", num_opcoes)
 print("Número total de amostras:", total_amostra)
@@ -15,39 +14,36 @@ print(amostra_por_prioridade)
 print("\nSatisfação média por prioridade:\n")
 print(media_por_prioridade)
 
-# ====================================================
-# RESULTADO OUTPUT:
-# ====================================================
-
+# OUTPUT RESULTADOS
 # Número de opções de prioridade:  10
-# Número total de amostras: 58965
+# Número total de amostras: 1517
 #
 # Número de amostra por prioridade:
 #
 # priority
-# compensations       3803
-# culture             2016
-# departament        11428
-# diversity           3939
-# financialPerf       8185
-# impactful           6075
-# industry           10143
-# profDevelopment     9269
-# tecnologies         3182
-# workFremotely        925
+# compensations     94
+# culture           44
+# departament      243
+# diversity         77
+# financialPerf    229
+# impactful        212
+# industry         199
+# profDevelop      350
+# tecnologies       40
+# workRemot         29
 # dtype: int64
 #
 # Satisfação média por prioridade:
 #
-#
-# priority          satisfaction
-# compensations        4.100973
-# culture              3.846726
-# departament          4.042527
-# diversity            4.039604
-# financialPerf        4.189493
-# impactful            4.010041
-# industry             4.036380
-# profDevelopment      3.947783
-# tecnologies          4.211188
-# workFremotely        4.006486
+#                satisfaction
+# priority
+# compensations      4.010638
+# culture            3.454545
+# departament        3.777778
+# diversity          4.116883
+# financialPerf      3.781659
+# impactful          4.051887
+# industry           3.708543
+# profDevelop        3.674286
+# tecnologies        3.450000
+# workRemot          3.862069
